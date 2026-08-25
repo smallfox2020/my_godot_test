@@ -25,10 +25,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5755483, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1587291460]
 shape = SubResource("CapsuleShape3D_wd5jx")
 
-[node name="capsule" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D" unique_id=881453807]
-mesh = SubResource("CapsuleMesh_vj4vo")
-
 [node name="Node3D" type="Node3D" parent="." unique_id=243968491]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1794548192]
 transform = Transform3D(0.2953778, 0, 0, 0, 0.3767672, 0, 0, 0, 0.2953778, 0.031068265, 0.46452683, 0.5161221)
+
+[node name="Player" type="Player" parent="." unique_id=462930439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10927211, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="Player" unique_id=881453807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5755483, 0)
+mesh = SubResource("CapsuleMesh_vj4vo")
