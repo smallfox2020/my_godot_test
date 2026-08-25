@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://kkl36qq1sicm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vj4vo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wd5jx"]
+radius = 0.05
+height = 0.256
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vj4vo"]
+radius = 0.05
+height = 0.25585938
+
+[node name="Root" type="Node3D" unique_id=823343665]
+transform = Transform3D(3.385495, 0, 0, 0, 2.654159, 0, 0, 0, 3.385495, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2001875502]
+transform = Transform3D(0.2953778, 0, 0, 0, 0.18522356, 0.3280941, 0, -0.2572191, 0.14521149, 0.031068265, 2.2279315, 1.2514786)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1721886219]
+mesh = SubResource("PlaneMesh_vj4vo")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=46365579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5755483, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1587291460]
+shape = SubResource("CapsuleShape3D_wd5jx")
+
+[node name="capsule" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D" unique_id=881453807]
+mesh = SubResource("CapsuleMesh_vj4vo")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=243968491]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1794548192]
+transform = Transform3D(0.2953778, 0, 0, 0, 0.3767672, 0, 0, 0, 0.2953778, 0.031068265, 0.46452683, 0.5161221)
